@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
+        http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
+
+    <class name="Neutron\SeoBundle\Entity\Seo">   
+ 
+        <property name="metaTitle">
+        	<constraint name="NotBlank">
+                <option name="message">meta_title.blank</option>
+                <option name="groups">
+                    <value>seo</value>
+                </option>
+            </constraint>
+            <constraint name="MinLength">
+                <option name="limit">2</option>
+                <option name="message">meta_title.short</option>
+                <option name="groups">
+                    <value>seo</value>
+                </option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">255</option>
+                <option name="message">meta_title.long</option>
+                <option name="groups">
+                    <value>seo</value>
+                </option>
+            </constraint>
+        </property>
+	     
+        <property name="metaKeywords">
+        	<constraint name="NotBlank">
+                <option name="message">meta_keywords.blank</option>
+                <option name="groups">
+                    <value>seo</value>
+                </option>
+            </constraint>
+            <constraint name="MinLength">
+                <option name="limit">2</option>
+                <option name="message">meta_keywords.short</option>
+                <option name="groups">
+                    <value>seo</value>
+                </option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">255</option>
+                <option name="message">meta_keywords.long</option>
+                <option name="groups">
+                    <value>seo</value>
+                </option>
+            </constraint>
+        </property>
+        
+        <property name="metaDescription">
+        	<constraint name="NotBlank">
+                <option name="message">meta_description.blank</option>
+                <option name="groups">
+                    <value>seo</value>
+                </option>
+            </constraint>
+            <constraint name="MinLength">
+                <option name="limit">2</option>
+                <option name="message">meta_description.short</option>
+                <option name="groups">
+                    <value>seo</value>
+                </option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">255</option>
+                <option name="message">meta_description.long</option>
+                <option name="groups">
+                    <value>seo</value>
+                </option>
+            </constraint>
+        </property> 
+        
+    </class>
+
+</constraint-mapping>

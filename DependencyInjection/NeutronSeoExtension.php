@@ -24,5 +24,7 @@ class NeutronSeoExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+        
+        $container->setParameter('neutron_seo.use_fallback', $config['use_fallback']);
     }
 }
