@@ -19,7 +19,6 @@ class SeoType extends AbstractType
          $builder
              ->add('metaTitle', 'neutron_input_limiter', array(
                  'label' => 'form.meta_title',
-                 'attr' => array('style' => 'width: 500px'),
                  'translation_domain' => 'NeutronSeoBundle',
                  'configs' => array(
                      'limit' => 255
@@ -27,7 +26,6 @@ class SeoType extends AbstractType
              ))
              ->add('metaKeywords', 'neutron_input_limiter', array(
                  'label' => 'form.meta_keywords',
-                 'attr' => array('style' => 'width: 500px'),
                  'translation_domain' => 'NeutronSeoBundle',
                  'configs' => array(
                      'limit' => 255
@@ -35,7 +33,6 @@ class SeoType extends AbstractType
              ))
              ->add('metaDescription', 'neutron_input_limiter', array(
                  'label' => 'form.meta_description',
-                 'attr' => array('style' => 'width: 500px'),
                  'translation_domain' => 'NeutronSeoBundle',
                  'configs' => array(
                      'limit' => 500

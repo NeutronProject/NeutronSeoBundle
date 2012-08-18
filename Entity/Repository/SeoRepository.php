@@ -13,22 +13,7 @@ use Gedmo\Translatable\Entity\Repository\TranslationRepository;
 
 class SeoRepository extends TranslationRepository
 {
-    public function deleteDefaultSeo()
-    {
-        $cache = $this->getEntityManager()->getConfiguration()->getResultCacheImpl();
-        $cache->delete($this->generateDefaultCacheId());
-        
-        $qb = $this->createQueryBuilder();
-        $qb
-            ->delete($this->getClassName(), 's')
-            ->where('s.isDefault = ?1')
-            ->setParameter(1, true);
-        ;
-        
-        $qb->getQuery()->execute();
-        
-    }
-    
+
     public function getDefaultSeoQueryBuilder()
     {
         $qb = $this->createQueryBuilder('s');

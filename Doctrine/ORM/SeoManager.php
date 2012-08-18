@@ -7,7 +7,7 @@ use Doctrine\ORM\EntityManager;
 
 use Neutron\SeoBundle\Model\SeoManagerInterface;
 
-class SeoManager implements SeoManagerInterface
+class SeoManager implements SeoManagerInterface 
 {
     const SEO = 'Neutron\\SeoBundle\\Entity\\Seo';
     
@@ -27,18 +27,17 @@ class SeoManager implements SeoManagerInterface
         $this->useFallback = (bool) $useFallback;
     }
     
-    public function createDefaultSeo()
-    {
-        $this->repository->deleteDefaultSeo();
-        $class = self::SEO;
-        $entity = new $class;
-        $entity->setIsDefault(true);
-        return $entity;
-    }
-    
     public function getDefaultSeo($useCache = false)
     {
-        return $this->repository->getDefaultSeo($useCache);
+        $default =  $this->repository->getDefaultSeo($useCache);
+        
+        if (!$default){
+            $class = self::SEO;
+            $default = new $class;
+            $default->setIsDefault(true); 
+        }
+        
+        return $default;
     }
     
     public function createSeo()
